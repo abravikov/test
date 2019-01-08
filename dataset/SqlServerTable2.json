@@ -1,0 +1,76 @@
+{
+	"name": "SqlServerTable2",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "SqlServer2",
+			"type": "LinkedServiceReference"
+		},
+		"type": "SqlServerTable",
+		"structure": [
+			{
+				"name": "CustomerID",
+				"type": "Int32"
+			},
+			{
+				"name": "NameStyle",
+				"type": "Boolean"
+			},
+			{
+				"name": "Title",
+				"type": "String"
+			},
+			{
+				"name": "FirstName",
+				"type": "String"
+			},
+			{
+				"name": "MiddleName",
+				"type": "String"
+			},
+			{
+				"name": "LastName",
+				"type": "String"
+			},
+			{
+				"name": "Suffix",
+				"type": "String"
+			},
+			{
+				"name": "CompanyName",
+				"type": "String"
+			},
+			{
+				"name": "SalesPerson",
+				"type": "String"
+			},
+			{
+				"name": "EmailAddress",
+				"type": "String"
+			},
+			{
+				"name": "Phone",
+				"type": "String"
+			},
+			{
+				"name": "PasswordHash",
+				"type": "String"
+			},
+			{
+				"name": "PasswordSalt",
+				"type": "String"
+			},
+			{
+				"name": "rowguid",
+				"type": "Guid"
+			},
+			{
+				"name": "ModifiedDate",
+				"type": "DateTime"
+			}
+		],
+		"typeProperties": {
+			"tableName": "[dbo].[Customer]"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

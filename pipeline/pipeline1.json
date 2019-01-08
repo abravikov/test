@@ -1,0 +1,62 @@
+{
+	"name": "pipeline1",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy Data1",
+				"type": "Copy",
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"typeProperties": {
+					"source": {
+						"type": "SqlSource"
+					},
+					"sink": {
+						"type": "SqlSink",
+						"writeBatchSize": 10000
+					},
+					"enableStaging": false,
+					"dataIntegrationUnits": 0,
+					"translator": {
+						"type": "TabularTranslator",
+						"columnMappings": {
+							"CustomerID": "CustomerID",
+							"NameStyle": "NameStyle",
+							"Title": "Title",
+							"FirstName": "FirstName",
+							"MiddleName": "MiddleName",
+							"LastName": "LastName",
+							"Suffix": "Suffix",
+							"CompanyName": "CompanyName",
+							"SalesPerson": "SalesPerson",
+							"EmailAddress": "EmailAddress",
+							"Phone": "Phone",
+							"PasswordHash": "PasswordHash",
+							"PasswordSalt": "PasswordSalt",
+							"rowguid": "rowguid",
+							"ModifiedDate": "ModifiedDate"
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "SqlServerTable1",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "SqlServerTable2",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}
